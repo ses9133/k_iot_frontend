@@ -1,0 +1,65 @@
+/* 
+# 아이디(id) 스타일 선택자
+*/
+#unique {
+  color: lightpink
+}
+/*
+# 클래스 스타일 선택자
+: .클래스명 으로 선택자 지정
+*/
+.heading2 {
+  color: lightgreen;
+}
+
+/* 
+# 태그 (타입, 요소) 스타일 
+  : 선택자를 태그명으로 지정
+*/
+h1 {
+  color: lightcoral;
+}
+
+h2 {
+  /* !important 속성은 속성값 옆에 띄어쓰기 구분하여 작성 */
+  /* color: lightblue !important;  */
+  color: lightblue; 
+}
+
+/* 중요도 & 적용범위 같음: 작성 순서에 따라 표시 */
+p {
+  color: yellow;
+  background-color: black;
+}
+
+p {
+  color: green;
+}
+
+p {
+  color: tomato;
+  /* 덮어쓰지 않는 스타일은 그대로 적용됨 (배경색은 black 그대로 유지됨) 
+      - 같은 속성만 덮어쓰기 됨 */
+}
+
+/* # 스타일 상속 */
+#container {
+  /* 부모 요소인 container div의 글자색이 span 태그에도 적용 (상속됨) */
+  color: red;
+  background-color: yellow;
+}
+
+#inner {
+  font-weight: 900;
+  background-color: green;
+}
+
+.text {
+  /* 요소에 직접적인 스타일 지정시, 상속값 생략 */
+  color: lightblue;
+  /*  inherit: 상속하다 (inner 의 배경색인 green 으로 지정됨) */
+  background-color: inherit;
+  /* background-color: inherit; 없어도 배경색 green 으로 보기에는 차이가 없으나
+  상속받아서 green 인 것이 아니라 애초 투명색이기에 green 으로 덮여진것인것임 */
+}
+
