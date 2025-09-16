@@ -1,0 +1,39 @@
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: navy;
+}
+
+ul[class="custom-list"] {
+  list-style-type: square;
+}
+
+/* 
+.custom-list li{
+   list-style-type: square;
+} */
+
+.data-table {
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+/* [class="data-table"] {
+   background-color: lightblue;
+}  */
+
+.data-table th {
+  background-color: lightblue;
+} 
+
+.fancy-border {
+  border: 2px dashed red;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+}
