@@ -24,7 +24,7 @@
       - baseline: 텍스트 기준 정렬
 
     ? 2. align-self
-      : 특정 아이템이 교차축(세로)에서의 배치를 결정
+      : 특정 아이템의 교차축(세로)에서의 배치를 결정
 
       속성값(align-items 와 동일)
     
@@ -44,6 +44,9 @@
       - 순위값이 동등할 경우 소스 코드 순서대로
       - 음수값 지정 가능
        
+    ? 5. align-content
+      : 여러 줄(flex-wrap 으로 줄 바꿈된 아이템들)을 교차 축 방향으로 어떻게 배치할지 결정하는 소것ㅇ
+      - 'flex-wrap: wrap...' 을 함께 써야 속성 효과가 나타남
   -->
 
   <div>
@@ -53,6 +56,10 @@
   <button id="four">four</button>
   <button id="five">five</button>
   <button id="six">six</button>
+  <button id="seven">seven</button>
+  <button id="eight">eight</button>
+  <button id="nine">nine</button>
+  <button id="ten">ten</button>
 </div>
 
 </body>
