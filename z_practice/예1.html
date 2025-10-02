@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #C1C7CC;
+  }
+
+  .sidebar {
+    background-color: #304352;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+  
+  }
+
+  .sidebar-inner {
+    background-color: transparent;
+    padding: 5px;
+  }
+
+  .icon {
+    margin-bottom: 10px;
+  }
+
+  .icon img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #596975;
+  }
+
+  .nickname {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100;
+    color: #ACB4BA;
+    /* 그림자..? */
+  }
+
+  .profile button {
+    border-radius: 5px;
+    background-color: #f6f1eb;
+    color: #BFBBA9;
+    border: none;
+  }
+  
+  .profile-border {
+    /* padding: 1px;
+    border-radius: 50%;
+    border: 3px dashed #f6f1eb; */
+  }
+
+  .logout {
+    align-self: flex-end;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .notication-btn {
+     padding: 10px 0;
+     font-size: 16px;
+     background-color: #57564F;
+     border-radius: 5px;
+     color: #f8efef;
+     cursor: pointer;
+     border: 1px solid #DED3C4;
+  }
+
+  .project-list {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #EBD9D1;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    height: 70%;
+    border: 1px solid #DED3C4;
+
+  }
+
+  .project-list div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .project-search {
+    margin-top: 10px;
+    /* background-color: aliceblue; */
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-list .projects {
+    background-color: #F7F4EA;
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #EBD9D1 ;
+    border-radius: 5px;
+    /* height: 300px; */
+    height: 380px;
+    overflow: auto;
+  }
+
+  .projects li {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: #616161;
+    border-bottom: 1px solid #BDBDBD;
+  }
+
+
+  .projects a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<body>
+  <div class="sidebar">
+    <div class="sidebar-inner"> 
+      <div class="icon">
+        <img src="./home.png" alt="home">
+      </div>
+      <div class="profile">
+        <div class="profile-border">
+          <img src="./강아지.jpg" alt="profile" class="profile-img">
+        </div>
+        <div class="nickname">NICKNAME</div>
+        <button class="logout">logout</button>
+      </div>
+      <div class="menu">
+        <button class="notication-btn">Notification</button>
+        <div class="project-list">
+          <div>
+          <span>Project List</span>
+          <button>+</button>
+          </div>
+          <input class="project-search" placeholder="Search Projects"></input>
+        <ul class="projects">
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+          <a href="#"><li>project 1</li></a>
+        </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

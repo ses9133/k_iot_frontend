@@ -1,0 +1,14 @@
+.sidebar{
+  background-color: rgb(235, 235, 235);
+  width: 200px;
+  min-height: 100vh; 
+  flex: 0 0 260px; 
+
+  padding: 16px;
+  overflow: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
