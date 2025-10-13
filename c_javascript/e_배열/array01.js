@@ -135,8 +135,8 @@ console.log(fruits); // [ 'mango', 'Strawberry', 'Coconut', 'orange', 'Banana' ]
 
 // 2) 삭제: splice(시작인덱스, 삭제할 요소의 개수)
 //        >> 2번째 인자값의 개수 만큼 시작 인덱스에서 삭제
-let removedFruits = fruits.splice(1, 2);
-console.log(removedFruits); // [ 'Strawberry', 'Coconut' ]
+let removedFruits = fruits.splice(1, 2); 
+console.log(removedFruits); // [ 'Strawberry', 'Coconut' ] - 삭제된 요소값 반환
 
 //? 요소 정렬
 // sort(): 오름차순 정렬
@@ -146,16 +146,17 @@ console.log(fruits.reverse()); // [ 'orange', 'mango', 'Banana' ]
 
 //? 배열 변환
 let fruitValues = ['사과', '바나나', '망고'];
+console.log('=== join -=--');
 console.log(fruitValues.join()); // 사과,바나나,망고 // 구분자를 전달하지 않으면 기본값 ','
-console.log(fruitValues.join(', '));
-console.log(fruitValues.join('-'));
-console.log(fruitValues.join(' '));
+console.log(fruitValues.join(', ')); // 사과, 바나나, 망고
+console.log(fruitValues.join('-')); // 사과-바나나-망고
+console.log(fruitValues.join(' ')); //사과 바나나 망고
 
 let str1 = '사과,바나나,망고';
 let str2 = '사과-바나나-망고';
 let str3 = '사과 바나나 망고';
-console.log(str1.split(','));
-console.log(str2.split('-'));
+console.log(str1.split(',')); // [ '사과', '바나나', '망고' ]
+console.log(str2.split('-')); // [ '사과', '바나나', '망고' ]
 console.log(str3.split(' ')); // [ '사과', '바나나', '망고' ]
 
 //! 다차원 배열
