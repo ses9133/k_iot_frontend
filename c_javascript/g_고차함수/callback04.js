@@ -30,7 +30,7 @@ setTimeout(runlater, 3000, '정세이'); // 첫번째 runlater 가 호출되고 
 // cf) 함수 호출: 함수명(인자나열...);
 //  > 호출부 () 작성시 코드를 읽는 즉시 함수 실행
 //setTimeout(runlater(), 3000, '김항미'); // TypeError [ERR_INVALID_ARG_TYPE]: The "callback" argument must be of type function. Received undefined
-// ! 호출부 (즉, 소괄호) 작성시 함수를 지금 바로 호출하라는 의미인데 setTimeout은 3초후 실행하게 하는 함수여서 서로 로직에 맞지 않음. -> setTimeout 함수 작성시 실행함수의 호출부 작성하지 않음
+// ! 호출부 (즉, 소괄호) 작성시 함수를 지금 바로 호출하라는 의미인데 setTimeout은 지정시간 이후 실행하게 하는 함수여서 서로 로직에 맞지 않음. -> setTimeout 함수 작성시 실행함수의 호출부 작성하지 않음
 
 function manyParam(name, age, job) {
   console.log(`${name} is ${age} years old, job: ${job}`);
