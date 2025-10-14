@@ -15,7 +15,7 @@ let computer1 = {
 // : 같은 메모리 주소를 가리킴(값을 공유)
 // >> 얕은 복사
 let computer2 = computer1;
-
+                                                                                
 computer1.name = '애플';
 console.log(computer2); // { name: '애플' }
 
