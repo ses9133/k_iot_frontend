@@ -49,8 +49,8 @@ let book1 = {
 let jsonString = JSON.stringify(book1);
 console.log(jsonString); // {"title":"백설공주","author":"이승아","publishYear":2025}
 
-// JSON 문자열의 키값은 반드시 "" 사용 필수
-// JS 객체의 키 값은 "" 따옴표 표기 생략
+// JSON 문자열의 value: 반드시 "" 사용 필수
+// JS 객체의 key: "" 따옴표 표기 생략
 
 let book2 = JSON.parse(jsonString);
 console.log(book2); // { title: '백설공주', author: '이승아', publishYear: 2025 } - JS 객체

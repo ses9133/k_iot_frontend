@@ -51,14 +51,17 @@ console.log(numberArray.reverse());
 // ]
 
 // 2) indexOf(), lastIndexOf(): 특정 요소의 인덱스를 찾는 메서드
-// 3) find(), findIndex(): 특정 조건을 만족하는 첫 번째 요소 / 첫번째 요소의 인덱스를 반환
-//     >> 존재하지 않으면 -1 반환
+// 3) find() : 특정 조건을 만족하는 첫 번째 요소 >> 존재하지 않으면 undefined 반환
+// 3) findIndex():  첫번째 요소의 인덱스를 반환 >> 존재하지 않으면 -1 반환
 let nums = [5, 2, 6, 3, 5, 7];
 let firstOverSix = nums.find(num => num > 6);
 console.log(firstOverSix); // 7
 
 let firstOverSix1 = nums.find(num => num > 3);
 console.log(firstOverSix1); // 5 (해당 조건을 만족하는 가장 첫번째 요소를 반환)
+
+let test = nums.find(num => num < 0);
+console.log(test); // undefined
 
 let firstOverEightIndex = nums.findIndex(num => num > 8);
 console.log(firstOverEightIndex); // -1
