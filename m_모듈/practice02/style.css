@@ -1,0 +1,98 @@
+body {
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 350px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  /* form: flex 컨테이너 / input, button: flex 아이템 */
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#new-todo {
+  /* flex 아이템들이 할당되고 남은 자리를 모두 차지 */
+  flex: 1; 
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 5px;
+
+  /* input 요소 활성화시 표시되는 border 라인 */
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#new-todo:focus {
+  border-color: #0056b3;
+}
+
+button {
+  background-color: #0056b3;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #004494;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  /* li 의 요소 2개(첫번째할일, button 태그) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:hover {
+  background-color: #efefef;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}

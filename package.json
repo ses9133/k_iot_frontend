@@ -1,0 +1,24 @@
+{
+  "name": "k6_iot_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ses9133/k_iot_frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ses9133/k_iot_frontend/issues"
+  },
+  "homepage": "https://github.com/ses9133/k_iot_frontend#readme"
+}
