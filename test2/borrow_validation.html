@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>borrow_validation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+  <h1 class="h1">도서 대출 요청 (정적 목업)</h1>
+
+  <section class="card" aria-labelledby="form-title">
+    <h2 id="form-title" class="sr-only">대출 입력 폼</h2>
+    <form>
+      <div class="row">
+        <div style="flex:1 1 220px">
+          <label for="memberId">회원번호 <span aria-hidden="true" class="meta">(필수, 1 이상)</span></label>
+          <input id="memberId" name="memberId" type="number" min="1" step="1" placeholder="예) 1" required/>
+        </div>
+        <div style="flex:1 1 220px">
+          <label for="bookId">도서번호 <span class="meta" aria-hidden="true">(필수, 1 이상)</span></label>
+          <input id="bookId" name="bookId" type="number" min="1" step="1" required placeholder="예) 10"/>
+        </div>
+        <div style="flex:1 1 220px">
+          <label for="bookId">회원 이름 <span class="meta" aria-hidden="true">(필수, 2~10자 한글로만)</span></label>
+          <input id="bookId" name="bookId" type="text" required pattern="[가-힣]+" minlength="2" maxlength="10"  title="2~10자 한글만 입력"  placeholder="예) 정은혜"/>
+        </div>
+        <div style="flex:1 1 220px">
+          <label for="bookId">이메일 <span class="meta" aria-hidden="true">(선택)</span></label>
+          <input id="bookId" name="bookId" type="email" pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+" placeholder="예) ses9133@naver.com"/>
+        </div>
+        <div style="flex:1 1 220px">
+          <label for="bookId">비밀번호 <span class="meta" aria-hidden="true">(필수) 8~16자 영문+숫자</span></label>
+          <input id="bookId" name="bookId" type="text" required pattern="[a-zA-Z0-9]*" minlength="8" maxlength="16" title="8~16자 영문 + 숫자 조합" placeholder="예) abc123456"/>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <button class="btn" type="submit" aria-disabled="true">대출 요청</button>
+      </div>
+      
+    </form>
+  </section>
+</main>
+
+</body>
+</html>
+
