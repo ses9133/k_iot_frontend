@@ -17,7 +17,6 @@
 // - 용량 제한: 4KB 이하
 // - 보안 취약: 누구나 읽을 수 있음 (개인정보 저장 금지)
 
-
 // ! 쿠키 생성 및 수정
 // : document.cookie 속성 
 // - 웹 브라우저에 쿠키를 생성하고 관리
@@ -51,7 +50,7 @@ document.cookie = "username=jeh; path=/";
 // - 만료 날짜값은 UTC(협정 셰게 시) 시간 단위를 가짐
 //  >> KST(한국 표준 시) 시간 단위 +9h 느림
 let date = new Date();
-// Date객체.getTime(): 시간 데이터가 가져오기(ms)
+// Date객체.getTime(): 시간 데이터 가져오기(ms)
 // Date객체.setTime(): 시간 데이터 설정
 
 // date.setTime(date.getTime() + (24 * 60 * 60 * 1000))
@@ -98,5 +97,5 @@ function getCookie(name) {
 console.log(getCookie("userEmail"));
 
 // 4) 쿠키 삭제
-// : 만료 시간을 과거 시간으로 설정
+// : 만료 시간을 과거 시간으로 설정하면 쿠키 삭제되는 것과 동일 효과를 냄
 document.cookie = "username=; expires=Thu, 01, Jan 1970 00:00:00 GMT; path=/";
