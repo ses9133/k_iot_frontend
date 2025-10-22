@@ -15,8 +15,15 @@ async function loadNotices() {
       <strong>${notice.title}</strong> <em>(${notice.author})</em>
       <br />
       <p>${notice.content}</p>
-      <small>등록일: ${new Date(notice.createdAt).toLocaleString()}</small>
+      <small>등록일: ${new Date(notice.createdAt + "Z").toLocaleString()}</small>
     `;
+
+    // ? .toLocaleString()
+    // : 브라우저(클라이언트)의 로컬 시간대를 사용
+    // > notice.createdAt 은 서버에서 생성됨 (UTC 기준 생성되는 시간)
+    //    >> 브라우저는 한국 시간으로 자동 변환하지 못함
+    //    >> "createdAt": "2025-10-21 12:34:56"
+    //    일반적으로 브라우저에서 쓰이는 시간 형식은 "2025-10-21T12:34:56Z" (Z 를 붙이면 강제로 KTS 전환을 시킴)
 
     // 삭제 버튼 생성 및 이벤트 등록
     const deleteBtn = document.createElement('button');
