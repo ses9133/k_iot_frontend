@@ -29,7 +29,7 @@
 document.cookie = "username=jeh; path=/";
 
 // ? cf) 경로 VS 도메인
-// 경로(path): 쿠키가 유효한 URL 경로의 범위를 제한
+// % 경로(path): 쿠키가 유효한 URL 하위 경로의 범위를 제한
 // ex) /, /domain, /user
 // - 도메인 뒤에 이어지는 부분
 // - 서버(사이트) 내의 특정 파일이나 페이지 위치를 나타냄
@@ -39,10 +39,9 @@ document.cookie = "username=jeh; path=/";
 // /admin, /api 요청에는 전송되지 않음 ❌
 // 즉, Path는 쿠키가 전송될 URL 경로를 지정하는 필터
 
-
-// 도메인(domain): 웹 사이트의 주소
-// - 도메인은 쿠키가 유효한 웹사이트(서버의 주소) 범위를 결정
+// % 도메인(domain): 쿠키가 유효한 웹사이트(서버의 주소) 범위를 결정
 // ex) /example.com, /google.com
+// ex) Set-Cookie: user=Eunhye; Domain=example.com; -> 이 쿠키는 example.com 과 하위 도메인들 (예: sub.example.com, api.example.com) 에서도 전송
 
 // +) 같은 이름의 쿠키를 다시 설정(재할당)하면 자동 수정됨
 
