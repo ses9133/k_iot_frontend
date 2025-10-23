@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isGameStarted = false;
 
   // 2) 카드가 뒤집혔는지 여부
-  let hasFlippedCard = false; 
+  let hasFlippedCard = false;  // 첫번째 카드를 뒤집었는지 여부 검사
 
   // 3) 첫번째, 두번째 카드
   let firstCard, secondCard;
@@ -112,21 +112,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ? this 키워드
     //  : 함수 선언문에서 this 는 해당 함수가 실행된 객체 그 자체임
-    // 여기서 this 는 card 를 의미
+    // 여기서 this 는 card 를 의미, 클릭된 .card DOM 요소
+    // addEventListener('click', filpCard) 로 이벤트가 걸려있을때 그 이벤트를 발생시킨 DOM 요소를 가리키는 것
     this.classList.add('flipped');
 
-    if(!hasFlippedCard) {
-      hasFlippedCard = true;
-      firstCard = this;
-      return;
+    if(!hasFlippedCard) { 
+      hasFlippedCard = true; // 첫번째 카드를 뒤집었다 표시
+      firstCard = this; // 클릭된 카드를 첫번째 카드로 저장
+      return; // 함수 종료 (두번째 클릭은 아직 없음)
     } else {
-      hasFlippedCard = false; 
-      secondCard = this;
+      hasFlippedCard = false; // false 로 초기화하고 다음 턴 준비
+      secondCard = this; // 이번에 클릭한 카드를 두번째 카드에 저장
     }
 
     // 두카드가 일치하는지 확인
     checkForMatch();
-
   }  
 
   // % 5. 두카드가 일치하는지 확인하는 함수 정의
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // # 배열의 요소를 무작위로 섞는 함수 
-// : 배열의 각 요소를 다른 임의의 위치와 교환
+// : 매번 게임을 새로 시작할 때 카드 배치 순서가 달라짐
 function shuffle(array) {
   // 배열의 마지막 요소부터 시작하여 첫 번째 요소까지 역순으로 반복
   let length = array.length;
