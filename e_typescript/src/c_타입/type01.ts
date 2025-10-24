@@ -89,6 +89,7 @@ let unknownData;
 // error('에러발생!!');
 
 // @ 타입 어노테이션 사용 예제 @ //
+
 // 문제1: 기본 타입 정의하기
 let username: string;
 let userAge: number;

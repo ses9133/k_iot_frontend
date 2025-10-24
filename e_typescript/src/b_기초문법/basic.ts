@@ -15,7 +15,7 @@
 // 2) export 키워드 사용법
 // : export 키워드 사용시 ts 파일이 자동으로 모듈로 인식됨
 // - 외부 전역 스코프와의 충돌을 방지
-export const tmp = ''; 
+// export const tmp = ''; 
 let num = 10;
 console.log(num);
 
