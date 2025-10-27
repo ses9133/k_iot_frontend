@@ -39,6 +39,7 @@ type ObjectSignature = {
   [key: number]: IUser; 
   // * 인덱스 시그니처 문법
   // : 객체의 키와 값의 타입 규칙을 정의하는 문법
+  // 객체명[key] 로 접근할 수 있음
 }
 
 const users: ObjectSignature = {
