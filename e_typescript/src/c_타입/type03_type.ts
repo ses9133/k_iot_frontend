@@ -47,7 +47,7 @@ const user2: UserType = {
 // type 타입별칭 = (매개변수: 타입지정) => 반환타입;
 
 // 예1)
-type ValidUser = (user: UserType) => boolean;;
+type ValidUser = (user: UserType) => boolean; 
 
 // cf) 함수 타입 별칭 사용시 함수 표현식 또는 화살표 함수 사용 권장
 // 변수종류 함수명:타입별칭 = 화살표함수작성...

@@ -35,7 +35,6 @@ type User = {
 // 관리 사용자
 type AdminUser = Admin & User;
 
-
 // 사용자를 관리 사용자로 만드는 함수
 function createAdminUser(user: User): AdminUser {
   // 스프레드 연산자 사용하여 새로운 객체 생성
