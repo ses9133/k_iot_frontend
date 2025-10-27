@@ -73,7 +73,7 @@ class _TaskManager<T> {
     this.tasks = this.tasks.filter(task => task.id !== id);
     
     // 변경된 할 일 목록을 화면에 다시 렌더링
-    this.renderTasks('task-list');
+    this.renderTasks('container');
     
     //? 할 일 개수를 업데이트
     this.updateTaskCount();
