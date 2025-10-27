@@ -34,8 +34,8 @@ function editTodo(todos: TodoItem[], id: number, newTask: string) {
 }
 
 // 2) 완료된 Todo 항목을 모두 삭제하는 함수 (clearCompleted)
-function clearCompleted(todos: TodoItem[], completed: boolean) {
-  const completedTodos = todos.filter(todo => !todo.completed);
+function clearCompleted(todos: TodoItem[]) {
+  const completedTodos = todos.filter(todo => todo.completed);
   return completedTodos;
 }
 
@@ -77,29 +77,6 @@ let todos: TodoItem[] = [
   { id: 9, task: "yz", completed: false },
 ];
 
-console.log('task 편집');
-todos = editTodo(todos, 1, 'aaa');
-console.log(todos);
-
-// console.log('완료된 todo 삭제');
-// todos = clearCompleted(todos, true);
-// console.log(todos);
-
-console.log('todos 목록 출력');
-console.log(getAllTodos(todos));
-getAllTodos(todos)
-
-console.log('false 인 todo 조회');
-let filteredTodo = filterTodos(todos, false);
-console.log(filteredTodo);
-
-console.log('true 인 todo 조회');
-let filteredTodo2  = filterTodos(todos, true);
-console.log(filteredTodo2);
-
-console.log(toggleTodo(todos, 2));
-
-todos = setAllTodosCompletion(todos, true);
-console.log(todos);
+console.log(clearCompleted(todos));
 
 // * 프로그램 실행
