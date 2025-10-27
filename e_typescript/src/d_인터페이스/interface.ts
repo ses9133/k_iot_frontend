@@ -23,7 +23,7 @@ interface IUser {
   name?: string;
   readonly age: number;
 
-  // 객체 메서드 명시
+  // [객체 메서드 명시]
   // : 메서드명(매개변수: 타입): 반환타입
   greet(name: string): void;
 }
@@ -52,7 +52,7 @@ class Student implements IUser {
   //  >> Definition Assignment Assertion(정의 할당 단언) : 변수명!
   
   name!: string;
-  age: number; 
+  age: number; // IUser는 age가 readonly 속성인데 구현체에서는 readonly 작성을 안해도 오류발생안하는 이유: implements 는 형태(shape)만 맞으면 통과하기 때문에
   // Property 'age' has no initializer and is not definitely assigned in the constructor.
   // :  TS 클래스는 객체 속성이 생성자 내에서 초기화되지 않으면 오류 발생
 
@@ -69,6 +69,9 @@ class Student implements IUser {
 }
 
 const student1 = new Student('정은혜', 29); // this.name === 정은혜
+student1.age = 30;
+console.log('확인');
+console.log(student1.age);
 student1.greet('최광섭'); // name === 최광섭
 
 // * 인터페이스 확장

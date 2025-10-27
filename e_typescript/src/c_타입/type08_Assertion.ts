@@ -25,7 +25,7 @@ console.log(length); // 16
 // +) 해당하는 선택자의 요소가 없을 경우 null 반환
 
 // cf) HTMLElement 타입은 각 요소들이 가진 고유한 속성에 접근할 수 없음
-//! >> 각 DOM 객체가 가지는 고유한 속성에 접근하기 위해서는 반드시 타입 단언이 필
+//! >> 각 DOM 객체가 가지는 고유한 속성에 접근하기 위해서는 반드시 타입 단언이 필요
 
 // @ 자주 쓰이는 DOM 타입 단언
 // button: HTMLButtonElement
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // TS 컴파일러는 실시간 코드 변환을 하지 않기때문에 코드 수정시 재컴파일 실행 필요
 });
 
-// @ 2) JSON 문자열
+// @ 2) JSON 객체
 // JSON 문자열을 분석하여 반환되는 데이터는 any 타입으로 간주
 const jsonString = '{"name": "jeh", "age": 29}';
 const userData1= JSON.parse(jsonString); // const userData1: any
