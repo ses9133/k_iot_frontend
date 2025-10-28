@@ -16,6 +16,7 @@ function generic<T>(arg: T): T {
   return arg;
 }
 
+
 generic<string>('안녕');
 generic<number>(123);
 
