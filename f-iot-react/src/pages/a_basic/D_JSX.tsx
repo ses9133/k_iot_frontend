@@ -36,7 +36,7 @@ import React from 'react'
 export function Div() {
   return(
     <>
-      <img src="" alt="" />
+      <img src="a" alt="" />
       <hr />
       <br />
       <input type="text" />
@@ -101,6 +101,10 @@ function D_JSX() {
         : 코드를 해석하는 과정에서 실행되지 않도록 '콜백함수'의 형태로 전달
         - 익명함수의 형태
         - 해당 이벤트가 발생해야만 내부 콜백함수가 실행됨 */}
+      {/* 이벤트에 인자를 전달해야하는 경우 콜백함수 사용해야함
+      <button onClick={handleClick('클릭')}> 이렇게 쓰면,
+      -> 화면 렌더링 시 handleClick('클릭')이 바로 실행됨
+       */}
       <button onClick={() => handleClick('클릭')}>클릭해주세요</button>
       
       <div style={divStyle} id='divElement' className='divClassElement'>
