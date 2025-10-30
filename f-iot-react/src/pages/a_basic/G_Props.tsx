@@ -4,9 +4,9 @@ import { Wrapper } from './H_Props';
 /*
   * Props(Properties): 컴포넌트의 속성
   - Props 로 데이터 전달
-  - 부모 컴포넌트로부터 자식 컴포넌트로 데이를 전달할 때 사용
+  - 부모 컴포넌트로부터 자식 컴포넌트로 데이터를 전달할 때 사용
   <ChildComponent name="정은혜"/>
-  - 함수형 컴포넌트에서 데이트 받는 곳: 매개변수
+  - 함수형 컴포넌트에서 데이터 받는 곳: 매개변수
       function ChildComponent({ name: string }) { .. }
       * 컴포넌트의 props 는 객체로 전달
       * 키="값" 전달은 (객체명: { 키: 데이터타입 }) 매개변수 구조로 인식
