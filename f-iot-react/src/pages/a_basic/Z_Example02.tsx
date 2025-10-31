@@ -77,34 +77,36 @@ interface TodoBoardProps {
 //     (2) 배열 렌더링
 //         div 내에서 done이 true면 텍스트 앞에 👉 첨부, 아니면 그냥 출력 //^ <TodoItem /> 컴포넌트 사용 (+ key / props)
 function TodoBoard({ todos }: TodoBoardProps) {
-  const doneCount = todos.filter(todo => todo.done === true); 
-  const renderTodo = todos.map(todo => (
-    <TodoItem key={todo.id} todo={todo} />
-  ));
+  const length = todos.length;
+  const doneCount = todos.filter(todo => todo.done).length;
 
   return (
-    <p>
-      {todos.length === 0 ? '할 일이 없습니다' : '완료: ' + doneCount + " / 전체: " + todos.length}
-      <div>
-        {todos.map(todo => (
-          <TodoItem key={todo.id} todo={todo}/>
-        ))}
-      </div>
-    </p>
+    <>
+      {length === 0 ? '할 일이 없습니다.' : (
+        <p>
+          완료: {doneCount} / 전체: {todos.length} 
+          <div>
+            {todos.map(todo => (<TodoItem key={todo.id} todo={todo}></TodoItem>))}
+          </div>
+        </p>
+      )
+      }
+    </>
   )
 }
 
 //@ Z_Example02 컴포넌트 (데이터 정의 및 전달)
 function Z_Example02() {
-  // const todos: Todo[] = [
-  //   { id: 1, text: "React 문법 복습", done: true },
-  //   { id: 2, text: "Props 이해하기", done: false },
-  //   { id: 3, text: "조건부 렌더링 연습하기", done: false }
-  // ]
+  const todos: Todo[] = [
+    { id: 1, text: "React 문법 복습", done: true },
+    { id: 2, text: "Props 이해하기", done: false },
+    { id: 3, text: "조건부 렌더링 연습하기", done: false }
+  ]
 
   return (
     <div style={{ marginTop: '10px', padding: "20px", border: '1px dashed black' }}>
       {/* == TodoBoard 사용 (props 전달) == */}
+      <TodoBoard todos={todos}></TodoBoard>
     </div>
   )
 }
