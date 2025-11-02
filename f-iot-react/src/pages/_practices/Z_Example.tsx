@@ -55,8 +55,8 @@ function Z_Example() {
     <>
       {/* <GreetingCard {renderUsers}></GreetingCard> */}
       {/* map() 으로 만든 JSX 배열은  GreetingCard에 넘기는 게 아니라 직접 렌더링해야 함 */}
-      <p>예제1</p>
-      {renderUsers}
+      <div>예제1</div>
+        {renderUsers}
     </>
   )
 }

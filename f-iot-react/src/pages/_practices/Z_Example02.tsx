@@ -83,12 +83,12 @@ function TodoBoard({ todos }: TodoBoardProps) {
   return (
     <>
       {length === 0 ? '할 일이 없습니다.' : (
-        <p>
+        <div>
           완료: {doneCount} / 전체: {todos.length} 
           <div>
             {todos.map(todo => (<TodoItem key={todo.id} todo={todo}></TodoItem>))}
           </div>
-        </p>
+        </div>
       )
       }
     </>

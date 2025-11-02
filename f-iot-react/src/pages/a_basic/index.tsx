@@ -11,8 +11,12 @@ import G_Props from './G_Props'
 import H_Props from './H_Props'
 import I_Rendering from './I_Rendering'
 import J_Handler from './J_Handler'
-import Z_Example from './Z_Example'
-import Z_Example02 from './Z_Example02'
+import Z_Example from '../_practices/Z_Example'
+import Z_Example02 from '../_practices/Z_Example02'
+import Example05 from '../_practices/Example05'
+import PostList from '../PostList'
+import Example03 from '../_practices/Example03'
+import Example04 from '../_practices/Example04'
 
 const h2Style = {
   backgroundColor: 'black',
@@ -62,6 +66,15 @@ function Index() {
       <Z_Example />
       <hr />
       <Z_Example02 />
+      <hr />
+
+      <PostList />
+      <hr />
+
+      <Example03 />
+      <hr />
+
+      <Example04 />
     </div>
   )
 }

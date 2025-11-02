@@ -4,7 +4,6 @@ import './App.css'
 import Basic from '@/pages/a_basic';
 import RoutePages from '@/pages/b_route';
 import Navibar from './components/Navibar';
-import Z_Example02 from './pages/a_basic/Z_Example02';
 
 function App() {
 
@@ -12,7 +11,6 @@ function App() {
     <>
     {/* 경로와 상관없이 렌더링 h1~Navibar */}
       <h1>Korea IoT React</h1>
-      <Z_Example02 />
       <Navibar />
 
       {/* Routes 태그: Route 를 감싸는 컴포넌트 */}
