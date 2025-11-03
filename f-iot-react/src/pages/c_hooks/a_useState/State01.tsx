@@ -52,7 +52,7 @@ function State01() {
   const [message, setMessage] = useState<string>('안녕하세요');
 
   // if(true) {
-    const [msg, setMsg] = useState<string>('반갑습니다.');
+  const [msg, setMsg] = useState<string>('반갑습니다.');
   // }
 
   // 이벤트 핸들러 정의
@@ -62,17 +62,17 @@ function State01() {
 //      -> 주로 현재(이전, 최신)의 값과 관련이 없는 변화가 이루어질 경우 사용
   const handleUpClick = () => {
     setCount(count + 1); // 0 + 1 
-    // setCount(count + 1); // 0 + 1 ->함수가 두개여도 값이 똑같게 출력됨
-   // setCount(5); // 상태 설정 함수의 인자값이 상태변수로 전달됨
+    // setCount(count + 1); // 0 + 1 -> 함수가 두개여도 값이 똑같게 출력됨
+    // setCount(5); // 상태 설정 함수의 인자값이 상태변수로 전달됨
   
    // * 2) 함수형 컴포넌트 사용
-  //  : 현재(이전, 최신)의 상태값을 기반으로 상태를 업데이트 하는 경우 사용
-  // * +) set- (상태 변경 함수) 함수 내에서 콜백함수를 사용
-  //    setCount(() => { return ... })
-  //    >> 해당 콜백함수의 인자는 상태의 최신값임
-  //    >> [명명규칙] prev- 로 시작함. ex) prevName, prevCount ...
-  setCount(prevCount => prevCount + 1);
-  setCount(prevCount => prevCount + 1); // -> 상태 설정 함수 그대로 2번 사용한것과 다른 결과 출력됨
+   //  : 현재(이전, 최신)의 상태값을 기반으로 상태를 업데이트 하는 경우 사용
+   // * +) set- (상태 변경 함수) 함수 내에서 콜백함수를 사용
+   //    setCount(() => { return ... })
+   //    >> 해당 콜백함수의 인자는 상태의 최신값임
+   //    >> [명명규칙] prev- 로 시작함. ex) prevName, prevCount ...
+    setCount(prevCount => prevCount + 1);
+    setCount(prevCount => prevCount + 1); // -> 상태 설정 함수 그대로 2번 사용한것과 다른 결과 출력됨
   }
 
   const handleDownClick = () => { 

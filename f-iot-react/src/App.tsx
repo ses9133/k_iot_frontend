@@ -7,6 +7,7 @@ import Hooks from '@/pages/c_hooks';
 import Navibar from './components/Navibar';
 import PostList from './pages/_practices/a_basic/PostList';
 import PostDetail from './components/PostDetail';
+import State07_TodoApp from './pages/c_hooks/a_useState/practice/State07_TodoApp';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/hooks' element={<Hooks />}/>
         <Route path='/practice/post' element={<PostList />}/>
         <Route path='/practice/post/:id' element={<PostDetail />} />
+        <Route path='/mypratice' element={<State07_TodoApp />} />
 
       </Routes>
 

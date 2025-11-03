@@ -5,7 +5,6 @@ import State03 from './a_useState/State03'
 import State04 from './a_useState/State04'
 import State05 from './a_useState/State05'
 import State06 from './a_useState/State06'
-import State06_Child from './a_useState/State06_Child'
 import Ref01 from './b_useRef/Ref01'
 
 const h2Style = {
