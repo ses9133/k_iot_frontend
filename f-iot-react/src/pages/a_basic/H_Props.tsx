@@ -66,7 +66,8 @@ function H_Props() {
       {/* 
         == 콘솔창 / 컴포넌트 모두 두 번 실행 ==
         : React18 이후의 StrictMode가 개발 모드에 서 부작용 탐지 위해 두 번 렌더링
-        : 실제 배포 환경에서는 한 번만 렌더링
+        : 실제 배포 환경에
+        서는 한 번만 렌더링
       */}
       <UserCard user={{ name: '이지훈', age: 20, email: 'asdf' }}/>
       <UserCard user={userData}/>

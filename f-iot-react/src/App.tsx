@@ -3,7 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css'
 import Basic from '@/pages/a_basic';
 import RoutePages from '@/pages/b_route';
+import Hooks from '@/pages/c_hooks';
 import Navibar from './components/Navibar';
+import PostList from './pages/_practices/a_basic/PostList';
+import PostDetail from './components/PostDetail';
 
 function App() {
 
@@ -21,6 +24,10 @@ function App() {
 
         {/* 중첩 라우팅 사용을 위해 반드시 부모 Route 의 path 끝에 /*가 필수! => 이렇게 해야 중첩된 자식 라우트 인식 */}
         <Route path='/route/*' element={<RoutePages />} />
+        <Route path='/hooks' element={<Hooks />}/>
+        <Route path='/practice/post' element={<PostList />}/>
+        <Route path='/practice/post/:id' element={<PostDetail />} />
+
       </Routes>
 
       {/* <ExampleComponent></ExampleComponent> */}
