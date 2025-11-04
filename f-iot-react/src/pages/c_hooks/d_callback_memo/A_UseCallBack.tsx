@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useState } from 'react'
 
-// UseCallback 
-// : React 함수형 컴포넌트 Hook
+// UseCallback (React 함수형 컴포넌트 Hook)
 // - 특정 콜백함수가 의존성 배열에 명시된 값들이 변경되지 않는 한, 동일한 함수 인스턴스를 유지하도록 해주는 훅
-// > 콜백함수를 메모이제이션(Memoization)
+// - 함수를 기억(Memoization) 해두는 Hook
+// - 렌더링이 다시 일어나도 같은 함수 객체를 재사용하게 만듦
 // > 주로 자식 컴포넌트에 함수 전달시 사용
 
 // ReactComponent 리렌더링
@@ -19,12 +19,13 @@ import React, { memo, useCallback, useState } from 'react'
 //   : 동일하면 다시 렌더링하지 않음(스킵)
 //   : 다르면 재렌더링 실행
 const Button = memo(({handleClick}: {handleClick: () => void}) => {
+  // handleClick 이라는 key 를 가지고, 그 값은 매개변수 & 반환값 없는 함수임
   console.log('버튼이 렌더링 되었습니다.');
   return <button onClick={handleClick}>자식 컴포넌트의 버튼</button>
 })
 
 // 부모컴포넌트
-function A_UseCallBack() {
+function A_UseCallback() {
   // === Hooks ===
   const [count, setCount] = useState<number>(0);
   const [text, setText] = useState<string>('');
@@ -65,8 +66,14 @@ function A_UseCallBack() {
       <p>Count: {count}</p>
       <button onClick={handleCountClick}>부모 컴포넌트의 버튼</button>
       {/* 
-        1) props 값 변경으로 리렌더링 - useCallback 으로 조절
-        2) 실제 부모 컴포넌트의 리렌더링 - useCallback 으로 조절 X
+        1) props 값 변경으로 리렌더링되는 경우 - useCallback 으로 조절
+        -> handleCountClick이 동일한 참조를 유지해서 props 변화가 없어지고, 자식 컴포넌트의 불필요한 리렌더링을 막을 수 있음
+        2) 실제 부모 컴포넌트의 리렌더링되는 경우 - useCallback 으로 조절 X
+        -> 예로, input 에 글자를 입력하면 setText() 가 실행됨
+        -> 부모의 상태(text)가 변경됨
+        -> 부모는 무조건 다시 렌더링됨(useCallback 이 부모가 리렌더링되는 걸 막을 순 없음)
+        => useCallback 으로 인해 handleCountClick 함수는 새로 안만들어짐
+        => 그 결과 자식에게 전달된 props 는 변하지 않음(자식 리렌더딩 X)
       */}
       <Button handleClick={handleCountClick}/>
       {/* 호출시, Button({ handleClick: handleCountClick}); 형태 */}
@@ -77,4 +84,16 @@ function A_UseCallBack() {
   )
 }
 
-export default A_UseCallBack
+export default A_UseCallback
+
+/*
+  props 관련 개념 보충
+  부모 컴포넌트
+  └── <Button handleClick={handleCountClick}/>   ← 함수 전달
+
+자식 컴포넌트
+  └── props의 타입 정의 { handleClick: () => void }
+      ↓
+      구조분해: ({ handleClick }) → handleClick === 부모의 handleCountClick
+
+*/

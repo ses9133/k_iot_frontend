@@ -14,8 +14,9 @@ import Ref_Practice02 from "./b_useRef/Practice02";
 import Effect01 from "./c_useEffect/Effect01";
 import Effect02 from "./c_useEffect/Effect02";
 import Effect_Practice01 from "./c_useEffect/Practice01";
-import A_UseCallBack from "./d_callback_memo/A_UseCallBack";
 import B_UseMemo from "./d_callback_memo/B_UseMemo";
+import A_UseCallback from "./d_callback_memo/A_UseCallBack";
+import A_My from "./d_callback_memo/A_My";
 
 function Index() {
   return (
@@ -47,7 +48,8 @@ function Index() {
       </ToggleSection>
 
       <ToggleSection title="4. 리액트 Hooks- useCallback & Memo">
-        <A_UseCallBack />
+        <A_UseCallback />
+        <A_My />
         <B_UseMemo />
       </ToggleSection>
     </div>

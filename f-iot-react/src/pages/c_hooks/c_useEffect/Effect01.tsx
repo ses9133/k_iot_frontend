@@ -35,10 +35,13 @@ import React, { useEffect, useState } from 'react'
 /*
   * useEffect 는 반환값 없이 사용
   useEffect(() => {
+    ✅ 1. Mount 시 실행
     == 부수효과 작성 ==
 
     ? useEffect 의 정리 함수
     - useEffect 내부에서 함수를 return 하면 해당 함수는 컴포넌트 화면에서 사라질 때(unmount) 실행됨 => 이것을 정리 함수(clean-up) 함수라고 표현
+    - 메모리 누수 방지
+    ✅ 2. Clean-up 함수: Unmount 시 실행
     return () => {
     == 언마운트시 실행될 코드 ==
     ex) 타이머, 인터벌 해제(clearInterval), 이벤트 리스터 제거(removeEventListener)
