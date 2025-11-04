@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { To } from 'react-router-dom';
 
 /*
 [요구사항]
