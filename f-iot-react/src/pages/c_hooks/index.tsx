@@ -17,6 +17,11 @@ import Effect_Practice01 from "./c_useEffect/Practice01";
 import B_UseMemo from "./d_callback_memo/B_UseMemo";
 import A_UseCallback from "./d_callback_memo/A_UseCallBack";
 import A_My from "./d_callback_memo/A_My";
+import Reducer01 from "./e_useReducer/Reducer01";
+import Reducer02 from "./e_useReducer/Reducer02";
+import Custom01 from "./f_custom/Custom01";
+import Custom02 from "./f_custom/custom02";
+import Custom03 from "./f_custom/Custom03";
 
 function Index() {
   return (
@@ -51,6 +56,17 @@ function Index() {
         <A_UseCallback />
         <A_My />
         <B_UseMemo />
+      </ToggleSection>
+
+      <ToggleSection title="5. 리액트 Hooks- useReducer">
+        <Reducer01 />
+        <Reducer02 />
+      </ToggleSection>
+
+      <ToggleSection title="6. 리액트 Hooks- custom Hooks">
+        <Custom01 />
+        <Custom02 />
+        <Custom03 />
       </ToggleSection>
     </div>
   );
