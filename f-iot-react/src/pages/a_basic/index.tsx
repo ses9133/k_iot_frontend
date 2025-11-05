@@ -11,12 +11,12 @@ import G_Props from './G_Props'
 import H_Props from './H_Props'
 import I_Rendering from './I_Rendering'
 import J_Handler from './J_Handler'
-import Z_Example from '../_practices/a_basic/Z_Example'
-import Z_Example02 from '../_practices/a_basic/Z_Example02'
-import Example05 from '../_practices/a_basic/Example05'
-import PostList from '../_practices/a_basic/PostList'
-import Example03 from '../_practices/a_basic/Example03'
-import Example04 from '../_practices/a_basic/Example04'
+import Z_Example from '../../_practices/a_basic/Z_Example'
+import Z_Example02 from '../../_practices/a_basic/Z_Example02'
+import Example05 from '../../_practices/a_basic/Example05'
+import PostList from '../../_practices/a_basic/PostList'
+import Example03 from '../../_practices/a_basic/Example03'
+import Example04 from '../../_practices/a_basic/Example04'
 
 const h2Style = {
   backgroundColor: 'black',

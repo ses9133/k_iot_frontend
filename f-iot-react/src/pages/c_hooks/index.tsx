@@ -15,13 +15,15 @@ import Effect01 from "./c_useEffect/Effect01";
 import Effect02 from "./c_useEffect/Effect02";
 import Effect_Practice01 from "./c_useEffect/Practice01";
 import B_UseMemo from "./d_callback_memo/B_UseMemo";
-import A_UseCallback from "./d_callback_memo/A_UseCallBack";
 import A_My from "./d_callback_memo/A_My";
 import Reducer01 from "./e_useReducer/Reducer01";
 import Reducer02 from "./e_useReducer/Reducer02";
 import Custom01 from "./f_custom/Custom01";
-import Custom02 from "./f_custom/custom02";
 import Custom03 from "./f_custom/Custom03";
+import TodoAppLocalStorage from "@/_practices/c_hooks/TodoAppLocalStorage";
+import A_UseCallback from "./d_callback_memo/A_UseCallback";
+import Custom02 from "./f_custom/Custom02";
+import Webcam from "./Webcam";
 
 function Index() {
   return (
@@ -68,6 +70,15 @@ function Index() {
         <Custom02 />
         <Custom03 />
       </ToggleSection>
+
+      <ToggleSection title="7. 리액트 Hooks- Todo">
+        <TodoAppLocalStorage />
+      </ToggleSection>
+
+      <ToggleSection title="8. 리액트 Hooks- Webcam">
+        <Webcam />
+      </ToggleSection>
+
     </div>
   );
 }

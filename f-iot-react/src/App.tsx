@@ -5,8 +5,9 @@ import Basic from '@/pages/a_basic';
 import RoutePages from '@/pages/b_route';
 import Hooks from '@/pages/c_hooks';
 import Navibar from './components/Navibar';
-import PostList from './pages/_practices/a_basic/PostList';
+import PostList from './_practices/a_basic/PostList';
 import PostDetail from './components/PostDetail';
+import SearchApp from './_practices/c_hooks/SearchApp';
 import State07_TodoApp from './pages/c_hooks/a_useState/practice/State07_TodoApp';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/hooks' element={<Hooks />}/>
         <Route path='/practice/post' element={<PostList />}/>
         <Route path='/practice/post/:id' element={<PostDetail />} />
+        <Route path='/practice/search' element={<SearchApp />} />
         <Route path='/mypratice' element={<State07_TodoApp />} />
 
       </Routes>

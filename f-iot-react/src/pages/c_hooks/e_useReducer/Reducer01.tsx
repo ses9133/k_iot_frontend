@@ -17,11 +17,12 @@ import React, { useReducer, useState } from 'react'
   > 상태 업데이트 로직을 reducer 함수로 분리하여 관리 가능
   [형식] const [state, dispatch] = useReducer(reducer함수, 초기상태);
   [구성요소]
-  - state: 현재 상태 값(관리되는 데이터)
-  - dispatch: 액션(Action)을 전달하여 상태를 변경하는 함수
+  ⚪ state: 현재 상태 값(관리되는 데이터)
+  ⚪ dispatch: 액션(Action)을 전달하여 상태를 변경하는 함수(상태 변경을 요청하는 함수)
     >> 해당 함수에 액션을 전달할 경우, reducer 함수가 호출되어 새로운 상태 계산
-  - reducer: 리듀서 함수(상태를 어떻게 변경할지 정의한 함수, useReducer 의 인자로 전달되는 함수)
+  ⚪ reducer: 리듀서 함수(상태를 어떻게 바꿀지를 정의하는 함수 , useReducer 의 인자로 전달되는 함수)
     >> 상태 변경 로직을 포함(switch, case)하고, 이전 상태와 액션 객체를 인자로 받아 새로운 상태를 반환
+  ⚪ 초기상태: 숫자, 문자열, 배열, 객체 등 어떤 값도 가능하나 확장성을 고려하여 객체타입으로 주로 많이 씀
 
   @  useState vs useReducer 사용 상황 정리
   - 단순한 값(토글, 입력값 등) : useState
@@ -30,7 +31,7 @@ import React, { useReducer, useState } from 'react'
 */ 
 
 /*
-  <리듀서 함수>
+  <reducer 함수 형태>
   function reducer(state, action) {
     switch(action.type) {
       case '동작A':
