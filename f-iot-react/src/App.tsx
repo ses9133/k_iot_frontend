@@ -14,6 +14,7 @@ import Z_ProductDetail from './pages/b_route/Z_ProductDetail';
 import Z_ProductInfo from './pages/b_route/Z_ProductInfo';
 import Z_Dashboard from './pages/b_route/Z_Dashboard';
 import Z_ProductReviews from './pages/b_route/Z_ProductReviews';
+import HTTP from '@/pages/d_http';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         {/* 중첩 라우팅 사용을 위해 반드시 부모 Route 의 path 끝에 /*가 필수! => 이렇게 해야 중첩된 자식 라우트 인식 */}
         <Route path='/route/*' element={<RoutePages />} />
         <Route path='/hooks' element={<Hooks />}/>
+        <Route path='/http' element={<HTTP />} />
 
         {/* 라우터 실습코드 */}
         <Route path='/practice/post' element={<PostList />}/>

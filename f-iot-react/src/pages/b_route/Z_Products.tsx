@@ -72,7 +72,11 @@ function Z_Products() {
         {filtered.map(product => (
           <li key={product.id} style={{ listStyle: 'none'}}>
             {/* state 를 사용하여 location 상태 전달 */}
-            <Link to={`/products/${product.id}`} state={{ from: location.pathname }}>
+            <Link to={`/products/${product.id}`} 
+            // 기본 경로뿐만 아니라 쿼리까지 포함하여 state 전달
+            // : 상세피이지에서 뒤로 갈 때
+            //  - /products?category=이전카테고리
+            state={{ from: location.pathname + location.search }}>
               {product.name}
             </Link>
           </li>

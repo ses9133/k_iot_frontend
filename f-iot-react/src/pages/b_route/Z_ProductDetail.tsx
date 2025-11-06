@@ -8,7 +8,7 @@ function Z_ProductDetail() {
   const location = useLocation(); // 객체 반환
 
   const handleBack = () => {
-    if(location.state?.from) navigate(location.state.form); // location 의 from 이있으면 location 의 from 으로 이동. (페이지 전환을 통해 상세페이지로 이동한 경우)
+    if(location.state?.from) navigate(location.state.from); // location 의 from 이있으면 location 의 from 으로 이동. (페이지 전환을 통해 상세페이지로 이동한 경우)
     else navigate('/products'); // 경로값 지정으로 해당 페에지 이전의 경로값이 없는 경우
   }
 
