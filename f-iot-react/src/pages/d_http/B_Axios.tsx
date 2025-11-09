@@ -8,7 +8,7 @@ import PostList from './PostList';
   : 브라우저나 Node.js 환경에서 HTTP 요청을 쉽게 처리할수 있는게 도와주는 Promise 기반의 HTTP 클라이언트 라이브러리
 
   - 서버와 통신해서 데이터를 가져오거나(GET),
-  - 서버에 데이터를 보낼 때 (POST, PUT, DELETE) Axiof 를 사용 (간결성, 일관성 향상)
+  - 서버에 데이터를 보낼 때 (POST, PUT, DELETE) Axios 를 사용 (간결성, 일관성 향상)
 
   * Axios 설치 명령어
   1) 기본 설치

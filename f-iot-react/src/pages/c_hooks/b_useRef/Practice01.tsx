@@ -6,9 +6,9 @@ function Practice01() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // * 처음 렌더링될 때 콜백함수의 기능을 딱 한 번만 실행
-  // useEffect(() => {
-  //   inputRef.current?.focus();
-  // }, []);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   const handleLogin = () => {
     alert(`입력한 이메일: ${inputRef.current?.value}`);

@@ -21,9 +21,9 @@ import Reducer02 from "./e_useReducer/Reducer02";
 import Custom01 from "./f_custom/Custom01";
 import Custom03 from "./f_custom/Custom03";
 import TodoAppLocalStorage from "@/_practices/c_hooks/TodoAppLocalStorage";
-import A_UseCallback from "./d_callback_memo/A_UseCallback";
 import Custom02 from "./f_custom/Custom02";
 import Webcam from "./Webcam";
+import A_UseCallback from "./d_callback_memo/A_UseCallBack";
 
 function Index() {
   return (
