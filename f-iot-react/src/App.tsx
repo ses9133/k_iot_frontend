@@ -15,6 +15,7 @@ import Z_ProductInfo from './pages/b_route/Z_ProductInfo';
 import Z_Dashboard from './pages/b_route/Z_Dashboard';
 import Z_ProductReviews from './pages/b_route/Z_ProductReviews';
 import HTTP from '@/pages/d_http';
+import GlobalState from '@/pages/e_global_state';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Route path='/route/*' element={<RoutePages />} />
         <Route path='/hooks' element={<Hooks />}/>
         <Route path='/http' element={<HTTP />} />
+        <Route path='/global-state' element={<GlobalState />} />
 
         {/* 라우터 실습코드 */}
         <Route path='/practice/post' element={<PostList />}/>

@@ -4,7 +4,7 @@
 import type { AxiosInstance, InternalAxiosRequestConfig } from "axios";
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhsot:8080/api/v1';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8080/api/v1';
 
 // process.env.REACT_APP_API_BASE
 // : 환경 변수
@@ -12,10 +12,10 @@ const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhsot:8080/api/v1'
 
 export const api: AxiosInstance = axios.create({
   baseURL: API_BASE,
-  timeout: 1000, // 10초 타임아웃 - 요청이 10초 이상 걸릴 경우 자동으로 요청 취소 + 타임아웃 에러
+  timeout: 10000, // 10초 타임아웃 - 요청이 10초 이상 걸릴 경우 자동으로 요청 취소 + 타임아웃 에러
   headers: {
     "Content-Type": "application/json",
-   Accept: "application/json"
+    Accept: "application/json"
   }
 });
 
@@ -63,7 +63,7 @@ api.interceptors.response.use((response) => response, async (e) => {
     // 필요시 로그인 페이지로 이동
     // window.location.href = '/login';
 
-    // 에러 객체 구조 통일ㄹ
+    // 에러 객체 구조 통일
     return Promise.reject(e);
   }
 })
