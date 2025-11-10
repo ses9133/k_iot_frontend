@@ -32,7 +32,7 @@ export interface AuthState {
   // 로그아웃 함수
   logout: () => void;
 
-  // 사용자 설정 함수
+  // 사용자 상태 설정 함수
   setUser: (u: User | null) => void;
 
   // 토큰 설정 함수
@@ -118,18 +118,29 @@ const withEnhancers = <T>(
 //     }))
 // );
 
-
-export const useAuthStore = create<AuthState>(
-  set => ({
+// useAuthStore: 전역 useState 하나를 만든다고 생각하면 됨
+export const useAuthStore = create<AuthState>( // 이 zustand 스토어는 AuthState 타입 상태를 관리하는 타입임을 지정 
+  // set => ({ ... })
+  // : set 이라는 상태 변경 함수를 받아서 초기상태 + 액션 함수들을 담은 객체를 반환
+  /*
+    1. Zustand 가 set 함수를 내부적으로 생성함
+    2. 그것을 (set) => ({...}) 함수의 매개변수로 전달함
+    3. 그러면 이 함수 내부에서 set() 을 호출할 수 있게 됨
+    4. 마지막으로 create() 가 이것을 감싸서 전역 store(useAuthStore)를 반환
+  */
+  (set) => ({
     // 초기 상태 명시
     user: null,
-    accessToken: null,
+    accessToken: null, 
     isLoading: false,
     error: null,
 
     // 액션 정의
+    // - 액션 정의는 리터럴 객체 형태로 선언
     setUser: (u) => set({ user: u}),
+
     setAccessToken: (token) => set({ accessToken: token }),
+
     login: async (loginId, password) => {
       set({ isLoading: true, error: null });
       try {
@@ -146,12 +157,14 @@ export const useAuthStore = create<AuthState>(
         })
       }
     },
+
     logout: () => {
       set({
         user: null,
         accessToken: null
       });
     },
+    
     refreshToken: async () => {
       try {
         const newToken = 'refreshed-token';
