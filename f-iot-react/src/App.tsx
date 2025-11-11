@@ -16,13 +16,30 @@ import Z_Dashboard from './pages/b_route/Z_Dashboard';
 import Z_ProductReviews from './pages/b_route/Z_ProductReviews';
 import HTTP from '@/pages/d_http';
 import GlobalState from '@/pages/e_global_state';
+import { useUIStore } from './stores/ui.store';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Toast from './components/Toast';
 
 function App() {
+  // zustand 의 store 는 호출시 내부의 스토어를 객체 형식으로 반환
+  // const { 전역상태내부의속성또는함수명 } = useUIStore(); - 내부의 모든 속성과 메서드 호출후 좌항의 일치하는 값만을 남김
+  
+  // 필요한 속성, 메서드만 뽑아서 반환 (구조분해할당X)
+  const darkMode = useUIStore(state => state.darkMode); // darkMode -> boolean 값
+
+  const appStyle = {
+    minHeight: '100vh',
+    backgroundColor: darkMode ? '#111' : '#fff',
+    color: darkMode ? '#bbb' : '#111',
+    transition: 'all 0.3s ease'
+  }
 
   return (
-    <>
+    <div style={appStyle}>
     {/* 경로와 상관없이 렌더링 h1~Navibar */}
-      <h1>Korea IoT React</h1>
+      <Header />
+      <Sidebar />
       <Navibar />
 
       {/* Routes 태그: Route 를 감싸는 컴포넌트 */}
@@ -53,9 +70,10 @@ function App() {
         </Route>
         <Route path='/dashboard' element={<Z_Dashboard />}/>
       </Routes>
+      <Toast />
 
       {/* <ExampleComponent></ExampleComponent> */}
-    </>
+    </div>
   )
 }
 

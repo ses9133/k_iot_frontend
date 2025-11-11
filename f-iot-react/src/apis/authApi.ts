@@ -1,4 +1,4 @@
-import { publicApi } from "./axiosInstance";
+import { privateApi, publicApi } from "./axiosInstance";
 
 interface SignInRequest {
   loginId: string;
@@ -10,6 +10,7 @@ interface SignInResponse {
   accessToken: string;
 }
 
+// 로그인
 export const signIn = async (data: SignInRequest): Promise<SignInResponse> => {
   const res = await publicApi.post('/auth/sign-in', data);
   
@@ -19,6 +20,19 @@ export const signIn = async (data: SignInRequest): Promise<SignInResponse> => {
 
   return res.data.data;
 }
+
+// 로그아웃
+export const signOut = async(): Promise<void> => {
+  await privateApi.post("/auth/sign-out")
+}
+
+// AccessToken refresh
+export const refreshAccessToken = async(): Promise<string> => {
+  const res = await publicApi.post("/auth/refresh-token", {}, { withCredentials: true });
+  if(!res.data.success) throw new Error('Refresh failed');
+  return res.data.data.accesssToken;
+}
+
 /*
 ┌──────────────────────────────────────┐
 │ 브라우저 (React: http://localhost:5173) │

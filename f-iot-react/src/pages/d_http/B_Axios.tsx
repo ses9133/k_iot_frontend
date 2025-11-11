@@ -20,7 +20,7 @@ import PostList from './PostList';
     1) 기본 HTTP 메서드(async, await 기반)
     - GET) const response = await axios.get("REST API 경로", { params });
     > params: 객체 타입, 쿼리 파라미터 값, ex) { page: 1, size: 10, keyword: 'hamburger' }
-            const users = response.data;
+            const users =a response.dat;
 
     - POST) const response =  await axios.post("REST API 경로", data);
     > data: 서버로 전송할 JSON 데이터

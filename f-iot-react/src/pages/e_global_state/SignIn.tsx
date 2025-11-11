@@ -3,11 +3,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function SignIn() {
-  const navigate = useNavigate();
-  const { login, isLoading, error } = useAuthStore();
-
   const [loginId, setLoginId] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const navigate = useNavigate();
+  const { login, isLoading, error } = useAuthStore();
 
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
@@ -16,6 +15,7 @@ function SignIn() {
     if(useAuthStore.getState().user) {
       navigate('/');
     }
+    
     /*
       useAuthStore.user 를 못하는 이유
       - zustand 의 create() 함수 반환값은 Hook 임. 즉, 컴포넌트 내부에서만 호출가능한 함수임 -> 해당 컴포넌트 내에서는 바로 user 로 접근할 수 있지만,
@@ -25,7 +25,6 @@ function SignIn() {
       -ex) .getState(): 현재 전역 상태를 React 밖에서도 읽을 수 있음.
             .setState(): 전역 상태를 강제로 업데이트 가능
             .subscribe(): 상태 변경을 구독할 수 있음
-
     */
   };
 
