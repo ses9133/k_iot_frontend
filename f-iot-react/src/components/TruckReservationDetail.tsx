@@ -1,4 +1,3 @@
-import { Div } from '@/pages/a_basic/D_JSX';
 import { useReservationStore } from '@/stores/reservation.store'
 import React, { useState } from 'react'
 import '@/pages/e_global_state/truck-pages.css'
