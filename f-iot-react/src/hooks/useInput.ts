@@ -14,7 +14,7 @@ type UseInputReturn = {
 export function useInput(initialValue: string) {
   const [value, setValue] = useState<string>(initialValue);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setValue(e.target.value);
   }
 
@@ -26,6 +26,10 @@ export function useInput(initialValue: string) {
     value, 
     onChange: handleInputChange
   }
+//   const bind = {
+//   value: value,
+//   onChange: handleInputChange
+// } 와 동일 형태. 변수명과 프로퍼티 명이 동일할 때 생략 가능
 
   return { value, handleReset, bind}
 }

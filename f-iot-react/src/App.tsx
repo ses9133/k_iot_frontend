@@ -20,8 +20,18 @@ import { useUIStore } from './stores/ui.store';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Toast from './components/Toast';
+import { useGlobalStore } from './stores/global.store';
+import { useEffect } from 'react';
 
 function App() {
+  const { isLoaded, fetchGlobalData } = useGlobalStore();
+  useEffect(() => {
+    if(!isLoaded) {
+      // 전역 상태 관리에 Global 데이터가 없는 경우
+      fetchGlobalData();
+    }
+  }, [isLoaded, fetchGlobalData]); // 맨 처음 실행 + 의존성 배열값 변경마다 실행
+
   // zustand 의 store 는 호출시 내부의 스토어를 객체 형식으로 반환
   // const { 전역상태내부의속성또는함수명 } = useUIStore(); - 내부의 모든 속성과 메서드 호출후 좌항의 일치하는 값만을 남김
   

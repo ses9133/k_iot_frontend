@@ -1,8 +1,9 @@
-import ReIct from 'react'
 import A_Context from './A_Context'
 import ToggleSection from '@/components/ToggleSection'
 import B_Zustand from './B_Zustand'
 import SignIn from './SignIn'
+import GlobalData from './GlobalData'
+import TruckDetailPage from './TruckDetailPage'
 
 function Index() {
   return (
@@ -21,6 +22,14 @@ function Index() {
 
       <ToggleSection title="3. SignIn Page">
         <SignIn />
+      </ToggleSection>
+
+      <ToggleSection title="4. zustand 연습(global-data)">
+        <GlobalData />
+      </ToggleSection>
+
+      <ToggleSection title="5. zustand 연습(reservation)">
+        <TruckDetailPage />
       </ToggleSection>
 
     </div>
