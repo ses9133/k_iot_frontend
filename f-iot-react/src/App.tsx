@@ -21,8 +21,12 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Toast from './components/Toast';
 import { useGlobalStore } from './stores/global.store';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Style from '@/pages/f_style'
+import { darkTheme, lightTheme } from './_practices/d_emotion/theme';
+import { ThemeProvider } from '@emotion/react';
+import { GlobalStyles } from './_practices/d_emotion/global';
+import Dashboard from './_practices/d_emotion/Dashboard';
 
 function App() {
   const { isLoaded, fetchGlobalData } = useGlobalStore();
@@ -37,17 +41,23 @@ function App() {
   // const { 전역상태내부의속성또는함수명 } = useUIStore(); - 내부의 모든 속성과 메서드 호출후 좌항의 일치하는 값만을 남김
   
   // 필요한 속성, 메서드만 뽑아서 반환 (구조분해할당X)
-  const darkMode = useUIStore(state => state.darkMode); // darkMode -> boolean 값
+  // const darkMode = useUIStore(state => state.darkMode); // darkMode -> boolean 값
 
-  const appStyle = {
-    minHeight: '100vh',
-    backgroundColor: darkMode ? '#111' : '#fff',
-    color: darkMode ? '#bbb' : '#111',
-    transition: 'all 0.3s ease'
-  }
+  // const appStyle = {
+  //   minHeight: '100vh',
+  //   backgroundColor: darkMode ? '#111' : '#fff',
+  //   color: darkMode ? '#bbb' : '#111',
+  //   transition: 'all 0.3s ease'
+  // }
+
+  const [isDark, setIsDark] = useState<boolean>(false);
+  const toggleTheme = () => setIsDark(prev => !prev);
+  const theme = isDark ? darkTheme : lightTheme;
 
   return (
-    <div style={appStyle}>
+    // <div style={appStyle}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles theme={theme}/>
     {/* 경로와 상관없이 렌더링 h1~Navibar */}
       <Header />
       <Sidebar />
@@ -70,6 +80,7 @@ function App() {
         <Route path='/practice/post' element={<PostList />}/>
         <Route path='/practice/post/:id' element={<PostDetail />} />
         <Route path='/practice/search' element={<SearchApp />} />
+        <Route path='/p/dashboard' element={<Dashboard toggleTheme={toggleTheme}/>} />
         <Route path='/mypratice' element={<State07_TodoApp />} />
 
         {/* @pages/b_route Z_실습코드 */}
@@ -85,7 +96,7 @@ function App() {
       <Toast />
 
       {/* <ExampleComponent></ExampleComponent> */}
-    </div>
+    </ThemeProvider>
   )
 }
 

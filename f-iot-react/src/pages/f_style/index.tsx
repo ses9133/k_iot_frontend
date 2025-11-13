@@ -3,6 +3,9 @@ import React from 'react'
 import A_CSS from './A_CSS'
 import B_Module from './B_Module'
 import C_StyledComponents from './C_StyledComponents'
+import D_Emotion from './D_Emotion'
+import EmotionPractice from './emotion-practice/EmotionPractice'
+
 
 function Index() {
   return (
@@ -23,6 +26,13 @@ function Index() {
         <C_StyledComponents />
       </ToggleSection>
 
+      <ToggleSection title="4. Emotion">
+        <D_Emotion />
+      </ToggleSection>
+
+      <ToggleSection title="5. Emotion + 반응형">
+        <EmotionPractice />
+      </ToggleSection>
 
     </div>
   )
