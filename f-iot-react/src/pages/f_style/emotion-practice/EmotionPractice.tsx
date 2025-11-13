@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import LoginForm from './loginForm'
-
+import React from 'react'
+import LoginForm from './LoginForm'
 
 function EmotionPractice() {
-  
   return (
     <div>
       <LoginForm />
