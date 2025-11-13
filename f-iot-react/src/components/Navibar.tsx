@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 // : 현재 경로에 따라 isActive 를 사용하여 스타일이나 클래스를 다르게 지정 가능
 
 function Navibar() {
-  const links = ['/', 'basic', 'route', 'hooks', 'http', 'global-state', 'practice/post', 'practice/search', 'mypratice'];
+  const links = ['/', 'basic', 'route', 'hooks', 'http', 'global-state', 'style', 'practice/post', 'practice/search', 'mypratice'];
   return (
     <div style={{
       display: 'flex',

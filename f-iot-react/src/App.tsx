@@ -22,6 +22,7 @@ import Sidebar from './components/Sidebar';
 import Toast from './components/Toast';
 import { useGlobalStore } from './stores/global.store';
 import { useEffect } from 'react';
+import Style from '@/pages/f_style'
 
 function App() {
   const { isLoaded, fetchGlobalData } = useGlobalStore();
@@ -63,6 +64,7 @@ function App() {
         <Route path='/hooks' element={<Hooks />}/>
         <Route path='/http' element={<HTTP />} />
         <Route path='/global-state' element={<GlobalState />} />
+        <Route path='/style' element={<Style />} />
 
         {/* 라우터 실습코드 */}
         <Route path='/practice/post' element={<PostList />}/>
