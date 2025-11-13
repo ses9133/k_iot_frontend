@@ -11,5 +11,5 @@ export const theme = {
     base: '0.8rem',
     card: '1.5rem',
   },
-  shadow: '0 10px 30px rgba(0, 0, 0, 0,1)'
+  shadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
 }

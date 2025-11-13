@@ -8,7 +8,7 @@ type Props = {
 
 // 다크모드 토글 버튼 UI + 이벤트 핸들러
 function ThemeToggle({ toggle }: Props) {
-  // Emotion 에서 제공하는 React 의훅
+  // Emotion 에서 제공하는 React 의 훅
   // : ThemeProvider 로 감싼 컴포넌트 트리 안에서 현재 theme 객체를 가지고 옴
   const theme = useTheme();
 
@@ -34,3 +34,12 @@ const ToggleButton = styled.button`
     opacity: 0.9;
   }
 `
+
+/*
+function ThemeToggle({ toggle }: Props) 
+
+원형)
+function ThemeToggle(props: Props) {
+  const toggle = props.toggle;
+}
+*/

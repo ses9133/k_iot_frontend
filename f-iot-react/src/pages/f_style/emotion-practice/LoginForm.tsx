@@ -15,8 +15,8 @@ function LoginForm() {
             <Title>로그인</Title>
             <Subtitle>모임 생성 시스템에 접속하세요</Subtitle>
             <Form>
-              <Input />
-              <Input />
+              <Input type='text' placeholder='아이디'/>
+              <Input type='password' placeholder='비밀번호'/>
               <Button>로그인</Button>
             </Form>
             <Footer>계정이 없으신가요?

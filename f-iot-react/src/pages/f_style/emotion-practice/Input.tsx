@@ -15,7 +15,7 @@ export const Input = styled.input`
   transition: border 0.2s;
 
   &:focus {
-    border: ${theme.colors.primary};
+    border: 1px solid ${theme.colors.primary};
     outline: none;
   }
 `
